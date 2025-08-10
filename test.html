@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    Width: &nbsp; <input type="text" id="width" value="23"> <br />
+    Height:&nbsp; <input type="text" id="height" value="35"> <br />
+    Graphics:&nbsp;&nbsp;
+    <select id="graphics">
+      <option value="true">On</option>
+      <option value="false">Off</option>
+    </select>
+    <br />
+    <input type="button" value="Update" onclick="settingsUpdate()" /> <br />
+    <br />
+
+    <script type="text/javascript">
+      function settingsUpdate() {
+        WIDTH = document.getElementById('width').value * TILE_SIZE
+        HEIGHT = document.getElementById('height').value * TILE_SIZE
+        GRAPHICS = document.getElementById('graphics').value
+        canvas.width = WIDTH
+        canvas.height = HEIGHT
+        state = MODE
+      }
+    </script>
+
+    <script src="src/base/settings.js"></script>
+
+    <!-- Roam -->
+    <script src="src/base/object/obstacle.js"></script>
+    <script src="src/base/object/delimiter.js"></script>
+    <script src="src/base/object/tree.js"></script>
+    <script src="src/base/object/sign.js"></script>
+    <script src="src/base/object/fence.js"></script>
+    <script src="src/base/object/water.js"></script>
+    <script src="src/base/object/grass.js"></script>
+    <script src="src/base/object/house.js"></script>
+    <script src="src/base/object/ledge.js"></script>
+  
+    <script src="src/base/map/pallet_town.js"></script>
+    <script src="src/base/map/route1.js"></script>
+    <script src="src/base/map/map1.js"></script>
+    <script src="src/base/map.js"></script>
+  
+    <!-- Attack -->
+    <script src="src/base/attack.js"></script>
+    <script src="src/base/attack/tackle.js"></script>
+    <script src="src/base/attack/quick_attack.js"></script>
+    <script src="src/base/attack/tail_whip.js"></script>
+    <script src="src/base/attack/water_gun.js"></script>
+  
+    <!-- Pokemon -->
+    <script src="src/base/pokemon.js"></script>
+    <script src="src/base/pokemon/rattata.js"></script>
+    <script src="src/base/pokemon/pidgey.js"></script>
+    <script src="src/base/pokemon/squirtle.js"></script>
+  
+    <!-- Battle -->
+    <script src="src/base/battle.js"></script>
+  
+    <!-- General -->
+    <script src="src/base/player.js"></script>
+    <script src="src/base/main.js"></script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
